@@ -34,8 +34,8 @@ RSpec.describe Passenger do
       charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
       taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
       
-      expect(charlie.adult?)
-      expect(taylor.adult?)
+      expect(charlie.adult?).to eq(true)
+      expect(taylor.adult?).to eq(false)
     end
   end
   
