@@ -34,4 +34,37 @@ class Park
     end
     adult_count * @admission_price
   end
+
+  def all_attendees
+    attendees = []
+
+    @vehicles.each do |vehicle|
+      vehicle.passengers.each do |passenger|
+        attendees << passenger.name
+      end
+    end
+    attendees.sort
+  end
+
+  def minors
+    minor_attendees = []
+
+    @vehicles.each do |vehicle|
+      vehicle.passengers.each do |passenger|
+        minor_attendees << passenger.name if passenger.age < 18
+      end
+    end
+    minor_attendees.sort
+  end
+
+  def adults
+    adult_attendees = []
+
+    @vehicles.each do |vehicle|
+      vehicle.passengers.each do |passenger|
+        adult_attendees << passenger.name if passenger.age >= 18
+      end
+    end
+    adult_attendees.sort
+  end
 end

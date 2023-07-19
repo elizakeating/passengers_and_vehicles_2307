@@ -98,11 +98,11 @@ RSpec.describe Park do
 
       park.add_vehicle(vehicle)
 
-      expect(park.all_attendees(park)).to eq(["Charlie", "Jill", "Jude", "Taylor"])
+      expect(park.all_attendees).to eq(["Charlie", "Jill", "Jude", "Taylor"])
     end
   end
 
-  xdescribe "#minors" do
+  describe "#minors" do
     it "returns all minors names, sorted alphabetically" do
       park = Park.new("Windmill Park", 5)
       vehicle = Vehicle.new("2001", "Honda", "Civic")
@@ -118,11 +118,11 @@ RSpec.describe Park do
 
       park.add_vehicle(vehicle)
 
-      expect(park.minors(park)).to eq(["Jill", "Taylor"])
+      expect(park.minors).to eq(["Jill", "Taylor"])
     end
   end
 
-  xdescribe "#adults" do
+  describe "#adults" do
     it "returns all adults names, sorted alphabetically" do
       park = Park.new("Windmill Park", 5)
       vehicle = Vehicle.new("2001", "Honda", "Civic")
