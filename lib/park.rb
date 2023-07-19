@@ -47,7 +47,7 @@ class Park
 
     @vehicles.each do |vehicle|
       vehicle.passengers.each do |passenger|
-        minor_attendees << passenger.name if passenger.age < 18
+        minor_attendees << passenger.name if !passenger.adult? 
       end
     end
     minor_attendees.sort
