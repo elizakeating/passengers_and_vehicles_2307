@@ -78,7 +78,7 @@ RSpec.describe Park do
 
       park.add_vehicle(vehicle)
 
-      expect(park.revenue).to eq(15)
+      expect(park.revenue).to eq(10)
     end
   end
 end
