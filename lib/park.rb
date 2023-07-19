@@ -17,9 +17,7 @@ class Park
     passenger_list = []
 
     @vehicles.each do |vehicle|
-      vehicle.passengers.each do |passenger|
-        passenger_list << passenger
-      end
+      passenger_list += vehicle.passengers
     end
     passenger_list
   end
@@ -28,9 +26,7 @@ class Park
     adult_count = 0
 
     @vehicles.each do |vehicle|
-      vehicle.passengers.each do |passenger|
-        adult_count += 1 if passenger.age >= 18
-      end
+      adult_count += vehicle.num_adults
     end
     adult_count * @admission_price
   end
@@ -62,7 +58,7 @@ class Park
 
     @vehicles.each do |vehicle|
       vehicle.passengers.each do |passenger|
-        adult_attendees << passenger.name if passenger.age >= 18
+        adult_attendees << passenger.name if passenger.adult?
       end
     end
     adult_attendees.sort
